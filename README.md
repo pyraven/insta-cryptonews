@@ -22,4 +22,6 @@ Disclaimer:
 Just an experiment; nothing more. Off to the next one!
 
 Demo:
-<video src="DEMO.mp4" width="320" height="200" controls preload></video>
+
+![Alt Text](https://thumbs.gfycat.com/AgitatedPepperyChickadee-size_restricted.gif)
+
