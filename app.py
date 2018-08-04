@@ -1,23 +1,24 @@
-from flask import Flask, request
-from twilio.twiml.messaging_response import MessagingResponse
 import configparser
-import requests
 import random
+import shutil
+import textwrap
+import time
+import bitly_api
 import boto3
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from PIL import ImageFont
+import requests
+from InstagramAPI import InstagramAPI
 from PIL import Image
 from PIL import ImageDraw
-import textwrap
-import shutil
-import bitly_api
-from InstagramAPI import InstagramAPI
-import time
+from PIL import ImageFont
+from flask import Flask, request
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
 phone_number = "+15555555555"
+
 
 class NewsBot(object):
 
@@ -73,7 +74,7 @@ class NewsBot(object):
     def random_photo(self):
         url_list = []
         url = f'https://pixabay.com/api/?key={self.photo_key}&q=cryptocurrency&image_type=' \
-               f'photo&min_width=1080&min_height=1080'
+              f'photo&min_width=1080&min_height=1080'
         response = requests.get(url)
         if response.ok:
             images = response.json()
@@ -81,7 +82,6 @@ class NewsBot(object):
                 url_list.append(image['largeImageURL'])
             random_url = random.choice(url_list)
             return random_url
-
 
     def resize(self, photo):
         try:
@@ -93,7 +93,7 @@ class NewsBot(object):
             image.save(photo)
             return photo
         except Exception as e:
-                return str(e)
+            return str(e)
 
     def download_photo(self, photo_url):
         _response = requests.get(photo_url, stream=True)
