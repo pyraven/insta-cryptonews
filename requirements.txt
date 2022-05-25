@@ -21,7 +21,7 @@ ngrok==0.0.1
 nltk==3.4.5
 numpy==1.15.0
 Pillow==6.2.2
-PyJWT==1.6.4
+PyJWT==2.4.0
 PySocks==1.6.8
 python-dateutil==2.7.3
 pytz==2018.5
