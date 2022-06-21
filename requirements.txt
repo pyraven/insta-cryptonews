@@ -19,7 +19,7 @@ newsapi==0.1.1
 newsapi-python==0.2.3
 ngrok==0.0.1
 nltk==3.4.5
-numpy==1.15.0
+numpy==1.22.0
 Pillow==6.2.2
 PyJWT==1.6.4
 PySocks==1.6.8
